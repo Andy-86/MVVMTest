@@ -15,13 +15,13 @@ import retrofit2.http.Path;
 public interface LoginService {
     @FormUrlEncoded
     @POST("users/{username}/repos")
-    Observable<List<ListBean>> publicRepositories(@Body User username);
+    Observable<List<ListBean>> dologin(@Body User username);
 
 
     class Factory {
         public static LoginService create() {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("")
+                    .baseUrl("http://192.168.0.1:8080/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             return retrofit.create(LoginService.class);

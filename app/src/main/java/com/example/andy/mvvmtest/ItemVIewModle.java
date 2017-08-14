@@ -2,6 +2,7 @@ package com.example.andy.mvvmtest;
 
 import android.content.Context;
 import android.databinding.BaseObservable;
+import android.view.View;
 
 /**
  * Created by andy on 2017/8/13.
@@ -37,25 +38,29 @@ public class ItemVIewModle extends BaseObservable implements ViewModle {
         else
             return "";
     }
-    public String getwatchers()
+    public String getWatchers()
     {
         if(bean!=null)
             return bean.getWatchers()+"";
         else
             return "";
     }
-    public String getstars()
+    public String getStars()
     {
         if(bean!=null)
             return bean.getStars()+"";
         else
             return "";
     }
-    public String getforks()
+    public String getForks()
     {
         if(bean!=null)
             return bean.getForks()+"";
         else
             return "";
+    }
+    public void onItemClick(View view)
+    {
+
     }
 }

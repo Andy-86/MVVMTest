@@ -7,7 +7,7 @@
 
         <variable
             name="bean"
-            type="com.example.andy.mvvmtest.bean"/>
+            type="com.example.andy.mvvmtest.MainVIewModle"/>
     </data>
 <LinearLayout
     android:orientation="vertical"
@@ -15,22 +15,40 @@
     android:layout_height="match_parent"
     tools:context="com.example.andy.mvvmtest.MainActivity">
 
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <EditText
+        android:layout_margin="10dp"
+        android:background="@drawable/editext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:text="@{bean.name}"
-         />
+        android:visibility="@{bean.nameVisiable}"
+        app:addTextChangedListener="@{bean.getnameTextWatcher}"
+        />
+    <EditText
+        android:layout_margin="10dp"
+        android:background="@drawable/editext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@{bean.password}"
+        android:visibility="@{bean.pswVisiable}"
+        app:addTextChangedListener="@{bean.getpswTextWatcher}"
+        />
     <Button
+        android:textColor="@android:color/white"
+        android:text="@string/login"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="@{bean.buttonVisiable}"
+        android:background="@drawable/click_button"
+        android:enabled="@{bean.buttonEnable}"
         android:onClick="@{bean::OnclickChange}"
         android:id="@+id/button"/>
-    <EditText
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:visibility="@{bean.recycleVisiable}"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@{bean.name}"
-        app:addTextChangedListener="@{bean.TextWatcher}"
-        />
+        android:layout_height="match_parent"/>
 </LinearLayout>
+
 </layout>
